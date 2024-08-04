@@ -1,2 +1,2 @@
 # Algorithm
-### Programmers Lever Test
+### Programmers Level Test
