@@ -59,7 +59,7 @@ public class SplitExam04 {
                 else answer2[i] = "X";
             }
         }
-        //배열을 출력하기위해 Arrays.toString()을 쓴다.
+
         System.out.println(Arrays.toString(answer1));
         System.out.println(Arrays.toString(answer2));
     }

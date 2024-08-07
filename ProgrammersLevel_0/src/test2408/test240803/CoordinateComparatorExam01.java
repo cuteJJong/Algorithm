@@ -17,25 +17,41 @@ import java.util.List;
 * 문자열에서 공백을 제거 후 각 숫자와 연산자를 정수로 바꾼 후 조건식 사용
 */
 public class CoordinateComparatorExam01 {
-    public static void main(String[] args) {
-        int [] arr = {293, 1000, 395, 678, 94};
-        int [] delete_list = {94, 777, 104, 1000, 1, 12};
-
-        List<Integer> answer = new ArrayList<>();
-
-        //arr 배열의 모든 요소 answerList에 추가 삭제하기 위해
-        for(int i = 0; i < arr.length; i++) {
-            answer.add(arr[i]);
-        }
-
-        for(int i = 0; i < arr.length ; i++) {
-            for(int j = 0; j < delete_list.length; j++) {
-                if(arr[i] == delete_list[j]) {
-                    // remove 메소드는 객체를 요그하기 때문에 int[]를 integer 객체로 변환해서 써야한다.
-                    answer.remove(Integer.valueOf(arr[i]));
+    class Solution {
+        public List solution(int[] arr, int[] delete_list) {
+            List<Integer> answer = new ArrayList<>();
+            //arr 배열의 모든 요소를 answer 리스트에 추가
+            for(int i = 0; i < arr.length; i++) {
+                answer.add(arr[i]);
+            }
+            //arr 배열의 요소와 delete_list의 요소를 비교 같으면 삭제
+            //remove() 메소드는 객체가 필요하기에
+            // Integer.valueOf()를 사용하여 기본형 int를 Integer 객체로 변환한 후 제거합니다.
+            for(int i = 0; i < arr.length ; i++) {
+                for(int j = 0; j < delete_list.length; j++) {
+                    if(arr[i] == delete_list[j]) {
+                        answer.remove(Integer.valueOf(arr[i]));
+                    }
                 }
             }
+            return answer;
         }
+    }
+
+    //다른 풀이
+    public List solution2(int[] arr, int[] delete_list) {
+        List<Integer> answer = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            answer.add(arr[i]);
+        }
+        for (int i = 0; i < delete_list.length; i++) {
+            if(answer.contains(delete_list[i])) {
+                answer.remove((Integer)delete_list[i]);
+            }
+        }
+        return answer;
+    }
+
 
         //자동 박싱 방법
 //        for (int value : arr) {
@@ -45,7 +61,4 @@ public class CoordinateComparatorExam01 {
 //        for (int value : delete_list) {
 //            answer.remove(value); // 자동 박싱: int를 Integer로 자동 변환
 //        }
-
-        System.out.println(answer);
-    }
 }

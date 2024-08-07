@@ -22,28 +22,16 @@ split(String regex, int limit) 메서드의 limit 인자에 대한 설명은 다
  */
 
 public class SplitExam03 {
-    public static void main(String[] args) {
-        String str1 = "oxooxoxxox";
-        String str2 = "xabcxdefxghi";
-
-        String [] aStr1 = str1.split("x", -1);
-        String [] aStr2 = str2.split("x", -1);
-
-        int [] answer1 = new int [str1.length()];
-        int [] answer2 = new int [str2.length()];
-
-        for (int i = 0 ; i < aStr1.length ; i++) {
-            answer1[i] = aStr1[i].length();
-            System.out.print(answer1[i] + ",");
+    class Solution {
+        public int[] solution(String myString) {
+            //myString을 구분자 x를 기준으로 분리하여 문자열 배열에 저장
+            String [] aStr = myString.split("x", -1);
+            int[] answer = new int[aStr.length];
+            //문자열의 길이를 측정하여 answer 배열의 해당 위치에 저장
+            for(int i = 0; i < aStr.length ; i++) {
+                answer[i] = aStr[i].length();
+            }
+            return answer;
         }
-        System.out.print("\n");
-
-        //향상된 for문은 String만 가능
-        for (int i = 0 ; i < aStr2.length ; i++) {
-            answer2[i] = aStr2[i].length();
-            System.out.print(answer2[i] + ",");
-        }
-        System.out.print("\n");
-
     }
 }
