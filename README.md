@@ -4,8 +4,8 @@
 
 * 푼 문제
 1. 다른 사람의 풀이 중 더 효율적이거나 좋은 아이디어가 있으면 주석으로 기록
-2. Programmers level_0 문제들은 해당 날짜로 class 생성, 'Programmers_Level_0'로 커밋하기
-3. 0단계 중요문제나, 1단계부터 문제 이름으로 class 생성<br /><br />
+2. Programmers level_0 문제들은 해당 날짜로 `class` 생성, "Programmers_Level_0" 커밋
+3. 0단계 중요 문제나, 1단계부터 문제 이름으로 `class` 생성<br /><br />
 
 * 풀리지 않은 문제  
 1. 다른 사람의 풀이를 올리되, 이해하거나 필요한 부분은 주석으로 설명<br /><br />
